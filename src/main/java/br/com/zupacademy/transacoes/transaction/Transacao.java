@@ -23,17 +23,33 @@ public class Transacao {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Cartao cartao;
 
-    private LocalDateTime afetivadaEm;
+    private LocalDateTime efetivadaEm;
 
     @Deprecated
     public Transacao() {
     }
 
-    public Transacao(String idApi, BigDecimal valor, Estabelecimento estabelecimento, Cartao cartao, LocalDateTime afetivadaEm) {
+    public Transacao(String idApi, BigDecimal valor, Estabelecimento estabelecimento, Cartao cartao, LocalDateTime efetivadaEm) {
         this.idApi = idApi;
         this.valor = valor;
         this.estabelecimento = estabelecimento;
         this.cartao = cartao;
-        this.afetivadaEm = afetivadaEm;
+        this.efetivadaEm = efetivadaEm;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public Estabelecimento getEstabelecimento() {
+        return estabelecimento;
+    }
+
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
     }
 }
