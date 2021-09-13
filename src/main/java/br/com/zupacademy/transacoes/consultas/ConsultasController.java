@@ -33,7 +33,7 @@ public class ConsultasController {
     @GetMapping("/api/cartoes/{id}/transacoes")
     public ResponseEntity<Page<TransacaoResponse>> buscarUltimasTransacoes (
             @PathVariable String id,
-            @PageableDefault(sort = "efetivadaEm", direction = Sort.Direction.ASC, page = 0, size = 10) Pageable pageable) {
+            @PageableDefault(sort = "efetivadaEm", direction = Sort.Direction.DESC, page = 0, size = 10) Pageable pageable) {
 
         logger.info("MÉTODO: buscarUltimasTransacoes, MENSAGEM: ID DO CARTAO: {}",id);
 
